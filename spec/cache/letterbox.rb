@@ -38,7 +38,7 @@ describe "Geocaching::Cache for 01328a57-5a04-4e69-a1cc-ce0eeaa452f5 (Letterbox)
   end
 
   it "should return the correct difficulty rating" do
-    @cache.difficulty.should == 3
+    @cache.difficulty.should == 3.5
   end
 
   it "should return the correct terrain rating" do
