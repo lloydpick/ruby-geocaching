@@ -4,19 +4,6 @@ require "time"
 require "json"
 
 module Geocaching
-  # The {LogsArray} class is a subclass of +Array+ and is used to store all
-  # logs that belong to a cache.  It implements the {#fetch_all} method to
-  # fetch the information of all logs inside the array.
-  class LogsArray < Array
-    # Calls {Geocaching::Log#fetch} for each log inside the array.
-    #
-    # @return [Boolean] Whether all logs could be fetched successfully
-    def fetch_all
-      each { |log| log.fetch }
-      map { |log| log.fetched? }.all?
-    end
-  end
-
   # The {Cache} class represents a cache on geocaching.com.  Altough some
   # information are available without being logged in, most information
   # will only be accessible after a successful login.
@@ -475,12 +462,12 @@ module Geocaching
 
     # Returns an array of the cache’s logs.
     #
-    # @return [Geocaching::LogsArray<Geocaching::Log>] Array of logs
+    # @return [Geocaching::LogArray<Geocaching::Log>] Array of logs
     def logs
       @logs ||= begin
         raise NotFetchedError unless fetched?
 
-        logs = LogsArray.new
+        logs = Geocaching::LogArray.new
         tds = @doc.search("table.Table.LogsTable > tr > td")
 
         if tds.size == 0
