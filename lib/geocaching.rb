@@ -79,13 +79,16 @@ module Geocaching
   class HTTPError < Error
   end
 
-  autoload :Cache,        "geocaching/cache"
-  autoload :CacheType,    "geocaching/cache_type"
-  autoload :HTTP,         "geocaching/http"
-  autoload :Log,          "geocaching/log"
-  autoload :LogType,      "geocaching/log_type"
-  autoload :MyLogs,       "geocaching/my_logs"
-  autoload :User,         "geocaching/user"
-  autoload :VERSION,      "geocaching/version"
-  autoload :Watchlist,    "geocaching/watchlist"
+  autoload :Cache,         "geocaching/cache"
+  autoload :CacheType,     "geocaching/cache_type"
+  autoload :HTTP,          "geocaching/http"
+  autoload :Log,           "geocaching/log"
+  autoload :LogType,       "geocaching/log_type"
+  autoload :LogArray,      "geocaching/log_array"
+  autoload :MyLogs,        "geocaching/my_logs"
+  autoload :User,          "geocaching/user"
+  autoload :VERSION,       "geocaching/version"
+  autoload :Watchlist,     "geocaching/watchlist"
+  autoload :TrackableType, "geocaching/trackable_type"
+  autoload :Trackable,     "geocaching/trackable"
 end
