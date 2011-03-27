@@ -51,7 +51,7 @@ module Geocaching
       raise ArgumentError, "No GUID given" unless @guid
 
       resp, @data = HTTP.get("/profile/?guid=#{guid}")
-      @doc = Nokogiri::HTML.parse(@data)
+      @doc = Nokogiri::HTML.parse(@data, nil, 'UTF-8')
     end
 
     # Returns whether user information have successfully been fetched

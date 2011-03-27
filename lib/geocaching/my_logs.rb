@@ -26,7 +26,7 @@ module Geocaching
       raise LoginError unless HTTP.loggedin?
 
       resp, @data = HTTP.get("/my/logs.aspx?s=1")
-      @doc = Nokogiri::HTML.parse(@data)
+      @doc = Nokogiri::HTML.parse(@data, nil, 'UTF-8')
     end
 
     # Returns whether logs have successfully been fetched

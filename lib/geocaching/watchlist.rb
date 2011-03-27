@@ -42,7 +42,7 @@ module Geocaching
       end
 
       resp, @data = HTTP.get("/my/watchlist.aspx")
-      @doc = Nokogiri::HTML.parse(@data)
+      @doc = Nokogiri::HTML.parse(@data, nil, 'UTF-8')
     end
 
     # Returns whether watchlist information have successfully been fetched

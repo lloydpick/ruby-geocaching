@@ -55,7 +55,7 @@ module Geocaching
       raise LoginError unless HTTP.loggedin?
 
       resp, @data = HTTP.get("/seek/log.aspx?LUID=#{@guid}")
-      @doc = Nokogiri::HTML.parse(@data)
+      @doc = Nokogiri::HTML.parse(@data, nil, 'UTF-8')
     end
 
     # Returns whether log information have successfully been fetched

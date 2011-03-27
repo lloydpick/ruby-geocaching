@@ -147,7 +147,7 @@ module Geocaching
 
       base_path = "/seek/cache_details.aspx?log=y&"
       resp, @data = HTTP.get(base_path + (@code ? "wp=#{@code}" : "guid=#{@guid}"))
-      @doc = Nokogiri::HTML.parse(@data)
+      @doc = Nokogiri::HTML.parse(@data, nil, 'UTF-8')
     end
 
     # Returns whether information have successfully been fetched
