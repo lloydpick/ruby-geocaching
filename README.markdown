@@ -4,6 +4,41 @@ Ruby API for geocaching.com
 This Ruby library provides an API for geocaching.com.
 
 
+API Info
+---
+
+Login
+-----
+    https://api.groundspeak.com/mango/Services.asmx/OpenSessionEx?licenseKey=e0dc6788-c880-4d3c-8903-3e2230650281&userName=USERNAME&password=PASSWORD&deviceId=&language=en&version=4.2.2&checksum=&deviceType=&schemaName=SessionDataSet2.xsd
+
+Trackables in Inventory
+-----
+    https://api.groundspeak.com/mango/Services.asmx/GetTrackableItemInventory?sessionToken=SESSION_TOKEN
+
+Trackable Info
+-----
+    https://api.groundspeak.com/mango/Services.asmx/GetTravelBugByTrackingNumber?sessionToken=SESSION_TOKEN&TrackingNumber=TRACKING_NUMBER
+    
+Cache Info
+-----
+    https://api.groundspeak.com/mango/Services.asmx/GetCachesByCacheCode?sessionToken=SESSION_TOKEN&schemaName=CacheGPXDataSet.xsd&cacheCode=CACHE_CODE
+    
+Cache Attributes
+-----
+    https://api.groundspeak.com/mango/Services.asmx/GetAttributesByWptCode?sessionToken=SESSION_TOKEN&wptCode=CACHE_CODE&schemaName=AttributeSimpleDataSet.xsd
+
+Cache Logs
+-----
+    https://api.groundspeak.com/mango/Services.asmx/GetCacheLogsByCacheCodePaged?sessionToken=SESSION_TOKEN&cacheCode=CACHE_CODE&startPos=0&endPos=9&cacheLogTypeNames=&
+
+Trackables in Cache
+-----
+    https://api.groundspeak.com/mango/Services.asmx/GetTravelBugsByCacheCode?sessionToken=SESSION_TOKEN&cacheCode=CACHE_CODE
+
+Waypoints for Cache
+-----
+    https://api.groundspeak.com/mango/Services.asmx/GetAdditionalWptsByWptCode?sessionToken=SESSION_TOKEN&wptCode=CACHE_CODE&schemaName=WaypointDataSet.xsd
+    
 Usage
 -----
 
